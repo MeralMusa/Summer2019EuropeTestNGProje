@@ -40,32 +40,22 @@ public class VerifyConfirmationMessage {
             System.out.println("expectedEmail = " + expectedEmail);
             System.out.println("actualEmail = " + actualEmail);
         }
-
+        //locating retrievePasswordButton using id attribute
         WebElement retrievePasswordButton = driver.findElement(By.id("form_submit"));
-
-
-
+        //clicking webelement
         retrievePasswordButton.click();
-
+        //verify that confirmation message says 'Your e-mail's been sent!'
         String expectedMessage = "Your e-mail's been sent!";
-
-
         WebElement messageElement = driver.findElement(By.name("confirmation_message"));
-
         String actualMessage = messageElement.getText();
-
-        if (expectedMessage.equals(actualMessage)){
-
+        if(expectedMessage.equals(actualMessage)){
             System.out.println("PASS");
-        }else {
-
+        }else{
             System.out.println("FAIL");
-            System.out.println("expectedMessage"+expectedMessage);
-            System.out.println("actualMessage"+actualMessage);
-
-
+            System.out.println("expectedMessage = " + expectedMessage);
+            System.out.println("actualMessage = " + actualMessage);
         }
         Thread.sleep(3000);
-
+        //close the browser
         driver.quit();
     }}
