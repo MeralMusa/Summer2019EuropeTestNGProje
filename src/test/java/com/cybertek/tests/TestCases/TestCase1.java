@@ -1,11 +1,9 @@
 package com.cybertek.tests.TestCases;
 
-import com.cybertek.utulities.WebDriverFactory;
+import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.sql.Driver;
 
 public class TestCase1 {
 
