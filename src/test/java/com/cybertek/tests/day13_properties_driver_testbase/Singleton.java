@@ -1,13 +1,10 @@
 package com.cybertek.tests.day13_properties_driver_testbase;
 
-public class Singelton {
-
-
-    private Singelton(){}
-
+public class Singleton {
 
     //singleton class will have private constructor
     //it means other classes cannot create object of this class
+    private Singleton(){}
 
     private static String str;
 
