@@ -57,6 +57,7 @@ public class TestBase {
     //ITestResult class describes the result of a test in TestNg
     @AfterMethod
     public void tearDownMethod(ITestResult result) throws InterruptedException, IOException {
+        //If test failed
         if(result.getStatus()==ITestResult.FAILURE){
             //record the name of the failed test case
             extentLogger.fail(result.getName());
@@ -65,9 +66,10 @@ public class TestBase {
             extentLogger.addScreenCaptureFromPath(screenshotPath);
             //capture the exception
             extentLogger.fail(result.getThrowable());
+        }else if(result.getStatus()==ITestResult.SKIP){
+            extentLogger.skip("Test Skipped: "+result.getName());
         }
         //Close the driver
         Thread.sleep(1000);
         Driver.closeDriver();
-    }
-}
+    }}
