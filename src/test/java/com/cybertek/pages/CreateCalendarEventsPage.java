@@ -1,5 +1,4 @@
 package com.cybertek.pages;
-
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,6 +47,8 @@ public class CreateCalendarEventsPage extends BasePage {
 
     @FindBy(xpath = "(//input[@type='radio'])[5]")
     public WebElement by;
+
+
 
     public Select repeatOptionsList(){
         return new Select(repeatOptions);
