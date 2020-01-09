@@ -1,6 +1,5 @@
 package com.cybertek.utilities;
 
-
 import java.io.FileInputStream;
 import java.util.Properties;
 

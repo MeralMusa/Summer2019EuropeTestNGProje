@@ -1,3 +1,4 @@
+
 package com.cybertek.tests.day15_pom_tests;
 
 import com.cybertek.pages.CalendarEventsPage;
@@ -7,12 +8,17 @@ import com.cybertek.pages.LoginPage;
 import com.cybertek.tests.TestBase;
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sun.rmi.runtime.Log;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+
 /*VERIFY RADIO BUTTONS
     Open browser
     Login as driver
@@ -23,6 +29,7 @@ import java.util.List;
     verify that repeat weekday is not checked
     * */
 public class RepeatOptionsTests extends TestBase {
+
     @Test
     public void RepeatRadioButtonTest(){
         //Login as driver
@@ -46,6 +53,7 @@ public class RepeatOptionsTests extends TestBase {
         Assert.assertTrue(createCalendarEventsPage.days.isSelected(),"Verify days rb is selected");
         //verify that repeat weekday is not checked
         Assert.assertFalse(createCalendarEventsPage.weekday.isSelected(),"Verify weekdays rb is not selected");
+
     }
     /*
     VERIFY REPEAT OPTIONS
@@ -56,6 +64,7 @@ public class RepeatOptionsTests extends TestBase {
         Click on repeat
         Verify that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
      */
+
     @Test
     public void verifyRepeatOptions(){
         //Login as driver
@@ -65,6 +74,7 @@ public class RepeatOptionsTests extends TestBase {
         loginPage.login(username,password);
         //Go to Activities->Calendar Events
         new DashboardPage().navigateToModule("Activities","Calendar Events");
+
         //Click on create calendar events
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
         //if you getting error
@@ -91,6 +101,11 @@ public class RepeatOptionsTests extends TestBase {
 
         //compare actual and expected list
         Assert.assertEquals(actualList,expectedList,"Compare dropdown values");
-        //Assert.assertEquals(actualOptions,expectedList);
+
+
+
+
     }
+
+
 }
